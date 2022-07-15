@@ -114,7 +114,8 @@
                                 Categorie
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              
+                                <a class="dropdown-item" href="/categorie/add">Ajout</a>
+                                <a class="dropdown-item" href="/categorie/getAll">Liste</a> 
                                 <a class="dropdown-item" href="#">Something else here</a>
                                 </div>
                             </li>

@@ -11,7 +11,7 @@ class Category extends Model
     public static $rules= array('nomCat'=>'required|min:15');
 
     public function product(){
-        return $this->hasMany('App\Product')
+        return $this->hasMany('App\Product');
     }
 
 }
