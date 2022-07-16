@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('libelle');
+            $table->integer('stock');
+            $table->unsignedInteger('categories_id');
+            $table->foreign('categories_id')->references('id')->on('categories');
+           
             $table->timestamps();
         });
     }

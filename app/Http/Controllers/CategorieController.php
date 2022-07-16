@@ -17,7 +17,7 @@ class CategorieController extends Controller
     }
     public function getAll(){
 
-        $liste_categories = Category::paginate(2); // equivaut de : select * from categorie limit 2;
+        $liste_categories = Category::paginate(5); // equivaut de : select * from categorie limit 2;
         //$liste_categories = categorie::all(); // equivaut select * from categorie;
         return view('categorie.list',['liste_categories' => $liste_categories]);
     }
@@ -28,14 +28,14 @@ class CategorieController extends Controller
     }
     public function update(Request $request){
         // Recupère les informations à partir de la base de donnée
-        $categorie = categorie::find($request->id);
-        $categorie->nomCat = $request->nomCat;
+        $categorie = Category::find($request->id);
+        $categorie->nomCat = $request->nom;
         $result = $categorie->save(); // 1 ou 0
         return $this->getAll();
     }
     public function delete($id){
 
-        $categorie = categorie::find($id); // equivaut de : select * from categorie where $id=$id; 
+        $categorie = Category::find($id); // equivaut de : select * from categorie where $id=$id; 
         if($categorie != null)
         {
            $categorie->delete();
@@ -44,11 +44,11 @@ class CategorieController extends Controller
     }
     public function persist(Request $request){
 
+        
+        $category = new Category(); 
+        $category->nomCat = $request->nom;   
 
-        $categorie = new categorie(); 
-        $categorie->nomCat = $request->nomCat;   
-
-        $result = $categorie->save(); // 1 ou 0
+        $result = $category->save(); // 1 ou 0
 
         return view('categorie.add',['confirmation' => $result]);
         //return $this->getAll(); // Une fois enregistré il reste sur la page d'enregistrement

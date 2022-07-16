@@ -10,7 +10,7 @@ class Product extends Model
     //use HasFactory;
     protected $fillable = array('categories_id','libelle','stock');
     public static $rules= array(
-        'category_id'=>'required|integer',
+        'categories_id'=>'required|integer',
         'libelle'=>'required|min:2',
         'stock'=>'required|integer');
 
