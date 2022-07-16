@@ -17,37 +17,37 @@ class SortieController extends Controller
     public function add(){
         $produits = Product::all();
        // return view('produit.add',compact('categories'));
-        return view('entrees.add',['produits' => $produits]);
+        return view('sorties.add',['produits' => $produits]);
 
     }
     public function getAll(){
 
 
-        $liste_entrees = Entrees::paginate(5); // equivaut de : select * from produit limit 2;
-        return view('entrees.list',['liste_entrees' => $liste_entrees]);
+        $liste_sortie = Sorties::paginate(5); // equivaut de : select * from produit limit 2;
+        return view('sortie.list',['liste_sortie' => $liste_sorties]);
     }
     public function edit($id){
         $produits = Product::all();
-        $entrees = Entrees::find($id);
-        return view('entrees.edit',['entrees' => $entrees,'produits' => $produits]);
+        $sorties = Sorties::find($id);
+        return view('sorties.edit',['sorties' => $sorties,'produits' => $produits]);
     }
     public function update(Request $request){
         // Recupère les informations à partir de la base de donnée
-        $entrees = Entrees::find($request->id);
-        $entrees->quantite = $request->quantite; 
-        $entrees->prix = $request->prix; 
-        $entrees->dateE = $request->date;   
+        $sorties = Sorties::find($request->id);
+        $sorties->quantite = $request->quantite; 
+        $sorties->prix = $request->prix; 
+        $sorties->dateS = $request->date;   
   
-        $entrees->products_id = $request->products_id  ;
-        $result = $entrees->save(); // 1 ou 0
+        $sorties->products_id = $request->products_id  ;
+        $result = $sorties->save(); // 1 ou 0
         return $this->getAll();
     }
     public function delete($id){
 
-        $entrees = Entrees::find($id); // equivaut de : select * from produit where $id=$id; 
-        if($entrees != null)
+        $sorties = Sorties::find($id); // equivaut de : select * from produit where $id=$id; 
+        if($sorties != null)
         {
-           $entrees->delete();
+           $sorties->delete();
         }
         return $this->getAll();
     }
@@ -55,18 +55,18 @@ class SortieController extends Controller
         $produits = Product::all();
 
         
-        $entrees = new Entrees(); 
-        $entrees->quantite = $request->quantite; 
-        $entrees->prix = $request->prix; 
-        $entrees->dateE = $request->date;   
+        $sorties = new Sorties(); 
+        $sorties->quantite = $request->quantite; 
+        $sorties->prix = $request->prix; 
+        $sorties->dateS = $request->date;   
   
-        $entrees->products_id = $request->products_id  ;
+        $sorties->products_id = $request->products_id  ;
 
-        $result = $entrees->save(); // 1 ou 0
+        $result = $sorties->save(); // 1 ou 0
 
         //$categories = Category::all();
         // return view('produit.add',compact('categories'));
-        return view('entrees.add',['confirmation' => $result ,'produits' => $produits] );
+        return view('sorties.add',['confirmation' => $result ,'produits' => $produits] );
         //return $this->getAll(); // Une fois enregistré il reste sur la page d'enregistrement
 
     }

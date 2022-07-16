@@ -47,3 +47,11 @@ Route::post('/entrees/update', [App\Http\Controllers\EntreeController::class , '
 Route::get('/entrees/delete/{id}', [App\Http\Controllers\EntreeController::class, 'delete'])->name('deleteentrees');
 Route::get('/entrees/getAll', [App\Http\Controllers\EntreeController::class, 'getAll'])->name('getallentrees');
 Route::post('/entrees/persist', [App\Http\Controllers\EntreeController::class, 'persist'])->name('persistentrees');
+
+
+Route::get('/sorties/add', [App\Http\Controllers\SortieController::class,'add' ])->name('addsorties');
+Route::get('/sorties/edit/{id}', [App\Http\Controllers\SortieController::class, 'edit'])->name('editsorties');
+Route::post('/sorties/update', [App\Http\Controllers\SortieController::class , 'update'])->name('updatesorties');
+Route::get('/sorties/delete/{id}', [App\Http\Controllers\SortieController::class, 'delete'])->name('deletesorties');
+Route::get('/sorties/getAll', [App\Http\Controllers\SortieController::class, 'getAll'])->name('getallsorties');
+Route::post('/sorties/persist', [App\Http\Controllers\SortieController::class, 'persist'])->name('persistsorties');
