@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->integer('quantite');
             $table->integer('prix');
-            $table->string('date');
+            $table->date('dateS');
             $table->unsignedInteger('products_id');
             $table->foreign('products_id')->references('id')->on('products');
             $table->timestamps();

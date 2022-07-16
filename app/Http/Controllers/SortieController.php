@@ -1,14 +1,13 @@
 <?php
+
 namespace App\Http\Controllers;
-use App\Models\Entrees;
+use App\Models\Sorties;
 use App\Models\Product;
 use App\Models\Category;
 
-
-
 use Illuminate\Http\Request;
 
-class EntreeController extends Controller
+class SortieController extends Controller
 {
     public function __construct()
     {

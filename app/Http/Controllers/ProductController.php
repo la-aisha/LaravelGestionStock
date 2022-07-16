@@ -53,7 +53,7 @@ class ProductController extends Controller
         return $this->getAll();
     }
     public function persist(Request $request){
-        $categories = Category::all();
+        //$categories = Category::all();
 
         
         $produit = new Product(); 

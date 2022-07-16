@@ -37,3 +37,13 @@ Route::post('/produit/update', [App\Http\Controllers\ProductController::class , 
 Route::get('/produit/delete/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('deleteproduit');
 Route::get('/produit/getAll', [App\Http\Controllers\ProductController::class, 'getAll'])->name('getallproduit');
 Route::post('/produit/persist', [App\Http\Controllers\ProductController::class, 'persist'])->name('persistproduit');
+
+
+
+
+Route::get('/entrees/add', [App\Http\Controllers\EntreeController::class,'add' ])->name('addentrees');
+Route::get('/entrees/edit/{id}', [App\Http\Controllers\EntreeController::class, 'edit'])->name('editentrees');
+Route::post('/entrees/update', [App\Http\Controllers\EntreeController::class , 'update'])->name('updateentrees');
+Route::get('/entrees/delete/{id}', [App\Http\Controllers\EntreeController::class, 'delete'])->name('deleteentrees');
+Route::get('/entrees/getAll', [App\Http\Controllers\EntreeController::class, 'getAll'])->name('getallentrees');
+Route::post('/entrees/persist', [App\Http\Controllers\EntreeController::class, 'persist'])->name('persistentrees');

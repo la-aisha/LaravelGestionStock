@@ -127,9 +127,17 @@
                                 <a class="dropdown-item" href="{{route('getallproduit')}}">Liste</a> 
                                 </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Produit</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Entrees
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{{route('addentrees')}}">Ajout</a>
+                                <a class="dropdown-item" href="{{route('getallentrees')}}">Liste</a> 
+                                </div>
                             </li>
+                            
+                            
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Entrees</a>
                             </li>
