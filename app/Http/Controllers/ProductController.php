@@ -24,7 +24,6 @@ class ProductController extends Controller
     public function getAll(){
 
 
-        
         $liste_produits = Product::paginate(5); // equivaut de : select * from produit limit 2;
         //$liste_produits = produit::all(); // equivaut select * from produit;
         return view('produit.list',['liste_produits' => $liste_produits]);

@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('entrees', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('quantite');
+            $table->integer('prix');
+            $table->string('date');
             $table->unsignedInteger('products_id');
             $table->foreign('products_id')->references('id')->on('products');
             $table->timestamps();

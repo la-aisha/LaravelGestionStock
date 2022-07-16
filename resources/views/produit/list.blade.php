@@ -20,7 +20,7 @@
                                 <td>{{$produit->id}}</td>
                                 <td>{{$produit->libelle}}</td>
                                 <td>{{$produit->stock}}</td>
-                                <td>{{$produit->categories_id.nomCat}}</td>
+                                <td>{{$produit->categories_id}}</td>
 
                                 <td>
                                     <a href="{{ route('editproduit',['id'=>$produit->id])}}">Editer</a>
